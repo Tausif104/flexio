@@ -42,7 +42,8 @@ jQuery(document).ready(function ($) {
   })
 })
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
+  // accordion class add
   var accordions = document.querySelectorAll('.accordion')
 
   accordions.forEach(function (accordion) {
@@ -59,5 +60,16 @@ document.addEventListener('DOMContentLoaded', function () {
         parentWrapper.classList.remove('active')
       }
     })
+  })
+
+  // connect wallet addons
+  const walletCheck = document.getElementById('termsofservice')
+  const walletList = document.getElementById('walletList')
+  walletCheck.addEventListener('change', () => {
+    if (walletCheck.checked) {
+      walletList.classList.remove('disable')
+    } else {
+      walletList.classList.add('disable')
+    }
   })
 })

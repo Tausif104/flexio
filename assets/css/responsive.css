@@ -99,6 +99,9 @@
   .navbar-nav {
     margin-top: 20px;
   }
+  header.dashboard-header {
+    position: static;
+  }
 }
 @media screen and (max-width: 767px) {
   .banner-content {
