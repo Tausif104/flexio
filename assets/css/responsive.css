@@ -4,6 +4,38 @@
   }
 }
 @media screen and (max-width: 1440px) {
+  .data-table .table-buttons a {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  aside.left-sidebar {
+    display: none;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-main {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-main-content {
+    width: 100%;
+  }
+
+  .mobile-menu {
+    display: inline-block;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  span.mobile-menu {
+    display: flex;
+  }
 }
 @media screen and (max-width: 1199px) {
   .banner-content h1 {
@@ -53,6 +85,10 @@
   section.cta-section h2 {
     font-size: 32px;
   }
+
+  .data-table .table-buttons a {
+    font-size: 12px;
+  }
 }
 @media screen and (max-width: 991px) {
   header {
@@ -101,6 +137,32 @@
   }
   header.dashboard-header {
     position: static;
+  }
+
+  header.dashboard-header .primary-btn {
+    margin-top: 0;
+  }
+  .dashboard-banner-logo {
+    display: none;
+  }
+  .market-live-tab-tabpane table {
+    display: none;
+  }
+
+  .table-mobile-boxes {
+    display: grid;
+  }
+  .table-mobile-boxes .table-primary-btn {
+    background-color: #b7f594;
+    color: #000;
+  }
+
+  .table-mobile-boxes .table-primary-btn:hover {
+    background-color: #fff;
+  }
+
+  .desktop-table {
+    display: none;
   }
 }
 @media screen and (max-width: 767px) {
@@ -202,6 +264,13 @@
 
   .result-boxes {
     grid-template-columns: repeat(2, 1fr);
+  }
+  header.dashboard-header .primary-btn {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  .table-mobile-boxes {
+    grid-template-columns: 1fr;
   }
 }
 @media screen and (max-width: 585px) {

@@ -1206,3 +1206,138 @@ input#termsofservice {
 .select-wallet-modal .modal-content {
   border-radius: 25px;
 }
+
+.dashboard-table .dashboard-main-content {
+  width: 100%;
+}
+
+.dashboard-grid.dashboard-table .dashboard-main {
+  grid-template-columns: 1fr;
+}
+
+.defi-banner {
+  background-color: #2396d7;
+}
+
+table.data-table tbody tr td {
+  width: calc(100% / 5);
+}
+
+.data-table .table-buttons {
+  justify-content: end;
+}
+
+.data-table th {
+  font-size: 16px;
+}
+
+.data-table td {
+  font-size: 14px;
+}
+
+.defi-filters ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 10px;
+}
+
+.defi-filters ul li a {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  font-size: 16px;
+  padding: 7px 22px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.defi-filters {
+  margin-top: 20px;
+}
+
+.defi-filters ul li a:hover,
+.defi-filters ul li a.active {
+  background-color: #fff;
+  color: #2396d7;
+}
+
+.data-table .table-buttons a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 13px;
+  padding-right: 13px;
+  font-size: 14px;
+}
+
+.data-table tbody tr td {
+  padding: 15px 0;
+}
+
+.data-table span.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.offcanvas-body {
+  background-color: #051023;
+}
+
+.offcanvas-header {
+  background-color: #051023;
+}
+
+span.mobile-menu {
+  display: inline-block;
+  background-color: #b7f594;
+  color: #000;
+  width: 43px;
+  height: 43px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+}
+
+span.mobile-menu {
+  display: none;
+}
+
+button.offcanvas-close-btn {
+  color: #ffeeee;
+  border: none;
+  background: none;
+  font-size: 25px;
+}
+
+.table-mobile-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.table-mobile-boxes .table-mobile-box-item {
+  background-color: #ffffff0d;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.table-mobile-box-item .label {
+  display: flex;
+  align-items: center;
+}
+
+.table-mobile-box-item .label h4 {
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.table-mobile-box-item .label h4 {
+  margin-left: 10px;
+}
+
+.table-mobile-boxes {
+  display: none;
+}

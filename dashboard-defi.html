@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexIO - Defi</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+    integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="assets/fonts/stylesheet.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+
+<!-- Modal -->
+<div class="modal fade select-wallet-modal" id="selectWallet" data-bs-backdrop="static" data-bs-keyboard="false"
+  tabindex="-1" aria-labelledby="selectWalletLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-content-inner">
+        <button class="wallet-close" type="button" data-bs-dismiss="modal" aria-label="Close"><img
+            src="assets/images/icons/cross.svg" alt=""></button>
+        <h3>Select wallet</h3>
+        <form action="">
+          <input type="checkbox" id="termsofservice">
+          <label role="button" for="termsofservice">I have read and accept <a href="#">Terms of services</a></label>
+        </form>
+        <div class="wallet-list disable" id="walletList">
+          <button class="secnodary-btn"><img src="assets/images/icons/metamusk.svg" alt=""> Metamusk</button>
+          <button class="secnodary-btn"><img src="assets/images/icons/trust-wallet.svg" alt=""> Trust Wallet</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="blur-container">
+  <!-- offcanvas -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header d-flex align-items-center justify-content-between">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img width="80px" src="assets/images/logo.svg" alt=""></h5>
+      <button class="offcanvas-close-btn" type="button" data-bs-dismiss="offcanvas"><i
+          class="fa-solid fa-circle-xmark"></i></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="box-item stake-select">
+        <h4><img src="assets/images/icons/polygon-purple.svg" alt=""> Polygon</h4>
+        <ul>
+          <li><a href="dashboard-stake.html">Stake</a></li>
+          <li class="active"><a href="dashboard-defi.html">Defi</a></li>
+        </ul>
+      </div>
+      <div class="box-item">
+        <h5>EXPLORE LIQUID STAKING</h5>
+        <ul>
+          <li><img src="assets/images/icons/ethereum.svg" alt="">
+            <a href="#"><span>Ethereum</span> <i class="fas fa-arrow-right-long"></i></a>
+          </li>
+          <li><img src="assets/images/icons/polygon.svg" alt="">
+            <a href="#"><span>Polygon</span> <i class="fas fa-arrow-right-long"></i></a>
+          </li>
+          <li><img src="assets/images/icons/bnb.svg" alt="">
+            <a href="#"><span>BNB</span> <i class="fas fa-arrow-right-long"></i></a>
+          </li>
+          <li><img src="assets/images/icons/fantom.svg" alt="">
+            <a href="#"><span>Fantom</span> <i class="fas fa-arrow-right-long"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="box-item">
+        <h5>GOVERNANCE</h5>
+        <ul>
+          <li><img src="assets/images/icons/ethereum.svg" alt="">
+            <a href="#"><span>Ethereum</span> <i class="fas fa-arrow-right-long"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="box-item text-center social-media">
+        <h5>OIN OUR COMMUNITY</h5>
+        <ul>
+          <li><a href=""><i class="fab fa-x-twitter"></i></a></li>
+          <li><a href=""><i class="fab fa-telegram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- offcanvas -->
+
+
+  <header class="dashboard-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-12 d-flex align-items-center justify-content-between">
+          <div class="header-left">
+            <span class="mobile-menu" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+              aria-controls="offcanvasExample">
+              <i class="fas fa-bars"></i>
+            </span>
+            <a href="dashboard.html">
+              <img src="assets/images/logo.svg" alt="">
+            </a>
+          </div>
+          <div class="header-right">
+            <a href="" class="primary-btn white-btn" data-bs-toggle="modal" data-bs-target="#selectWallet">Connect
+              Wallet</a>
+            <a href="" class="menu"><img src="assets/images/menu.svg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="dashboard">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="dashboard-grid dashboard-table">
+            <aside class="left-sidebar">
+              <div class="box-item stake-select">
+                <h4><img src="assets/images/icons/polygon-purple.svg" alt=""> Polygon</h4>
+                <ul>
+                  <li><a href="dashboard-stake.html">Stake</a></li>
+                  <li class="active"><a href="dashboard-defi.html">Defi</a></li>
+                </ul>
+              </div>
+              <div class="box-item">
+                <h5>EXPLORE LIQUID STAKING</h5>
+                <ul>
+                  <li><img src="assets/images/icons/ethereum.svg" alt="">
+                    <a href="#"><span>Ethereum</span> <i class="fas fa-arrow-right-long"></i></a>
+                  </li>
+                  <li><img src="assets/images/icons/polygon.svg" alt="">
+                    <a href="#"><span>Polygon</span> <i class="fas fa-arrow-right-long"></i></a>
+                  </li>
+                  <li><img src="assets/images/icons/bnb.svg" alt="">
+                    <a href="#"><span>BNB</span> <i class="fas fa-arrow-right-long"></i></a>
+                  </li>
+                  <li><img src="assets/images/icons/fantom.svg" alt="">
+                    <a href="#"><span>Fantom</span> <i class="fas fa-arrow-right-long"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="box-item">
+                <h5>GOVERNANCE</h5>
+                <ul>
+                  <li><img src="assets/images/icons/ethereum.svg" alt="">
+                    <a href="#"><span>Ethereum</span> <i class="fas fa-arrow-right-long"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="box-item text-center social-media">
+                <h5>OIN OUR COMMUNITY</h5>
+                <ul>
+                  <li><a href=""><i class="fab fa-x-twitter"></i></a></li>
+                  <li><a href=""><i class="fab fa-telegram"></i></a></li>
+                </ul>
+              </div>
+            </aside>
+            <div class="dashboard-main">
+              <div class="dashboard-main-content">
+                <div class="dashboard-banner defi-banner">
+                  <div class="dashboard-banner-content">
+                    <h1>Participate in DeFi</h1>
+                    <p>Use HBARX and explore additional yield while still earning your staking rewards</p>
+                    <div class="defi-filters">
+                      <ul>
+                        <li><a class="active" href="">All</a></li>
+                        <li><a href="">SD pools</a></li>
+                        <li><a href="">Liquidity pools</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="dashboard-banner-logo">
+                    <img src="assets/images/defi-thumb.png" alt="">
+                  </div>
+                </div>
+
+                <div class="mt-5">
+
+                  <h3 class="mb-4">SD Pools</h3>
+                  <div class="box-item border-box desktop-table">
+                    <table class="w-100 data-table">
+                      <thead>
+                        <tr>
+                          <th>Assets</th>
+                          <th>APR</th>
+                          <th>TVL</th>
+                          <th>Provider</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <span class="title"><span class="title"><img src="assets/images/icons/flx.svg" alt=""> FLX -
+                                HBARX</span></span>
+                          </td>
+                          <td>
+                            34.5 %
+                          </td>
+                          <td>
+                            $28K
+                          </td>
+                          <td>
+                            <span class="title"><img src="assets/images/icons/saucerswap.svg" alt=""> Saucerswap</span>
+                          </td>
+                          <td>
+                            <div class="table-buttons">
+                              <a href="#" class="primary-btn">Add Liquidity</a>
+                              <a href="#" class="outline-btn">Swap</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- mobile boxes -->
+                  <div class="table-mobile-boxes">
+                    <div class="table-mobile-box-item">
+                      <div class="label">
+                        <img src="assets/images/icons/flx.svg" alt="">
+                        <h4>FLX - HBARX</h4>
+                      </div>
+                      <div class="d-flex justify-content-between my-2">
+                        <div class="mobile-left">
+                          <span>APR</span> <span>34.5 %</span>
+                        </div>
+                        <div class="mobile-right">
+                          <span>TVL</span> <span>$28K</span>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-between my-2">
+
+                        <span>Provider</span> <span><img src="assets/images/icons/saucerswap.svg" alt="">
+                          Saucerswap</span>
+
+                      </div>
+                      <div class="mobile-buttons">
+                        <button class="table-primary-btn">Add Liquidity</button>
+                        <button class="table-bordered-btn">Swap</button>
+                      </div>
+                    </div>
+                    <!-- mobile boxes end -->
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <h3 class="mb-4">Liquidity pools</h3>
+                <div class="box-item border-box desktop-table">
+                  <table class="w-100 data-table">
+                    <thead>
+                      <tr>
+                        <th>Assets</th>
+                        <th>APR</th>
+                        <th>TVL</th>
+                        <th>Provider</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span class="title"><img src="assets/images/icons/flx.svg" alt=""> FLX - HBARX</span>
+                        </td>
+                        <td>
+                          34.5 %
+                        </td>
+                        <td>
+                          $28K
+                        </td>
+                        <td>
+                          <span class="title"><img src="assets/images/icons/saucerswap.svg" alt=""> Saucerswap</span>
+                        </td>
+                        <td>
+                          <div class="table-buttons">
+                            <a href="#" class="primary-btn">Add Liquidity</a>
+                            <a href="#" class="outline-btn">Swap</a>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="title"><img src="assets/images/icons/flx.svg" alt=""> FLX - HBARX</span>
+                        </td>
+                        <td>
+                          34.5 %
+                        </td>
+                        <td>
+                          $28K
+                        </td>
+                        <td>
+                          <span class="title"><img src="assets/images/icons/saucerswap.svg" alt=""> Saucerswap</span>
+                        </td>
+                        <td>
+                          <div class="table-buttons">
+                            <a href="#" class="primary-btn">Add Liquidity</a>
+                            <a href="#" class="outline-btn">Swap</a>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="title"><img src="assets/images/icons/flx.svg" alt=""> FLX - HBARX</span>
+                        </td>
+                        <td>
+                          34.5 %
+                        </td>
+                        <td>
+                          $28K
+                        </td>
+                        <td>
+                          <span class="title"><img src="assets/images/icons/saucerswap.svg" alt=""> Saucerswap</span>
+                        </td>
+                        <td>
+                          <div class="table-buttons">
+                            <a href="#" class="primary-btn">Add Liquidity</a>
+                            <a href="#" class="outline-btn">Swap</a>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="title"><img src="assets/images/icons/flx.svg" alt=""> FLX - HBARX</span>
+                        </td>
+                        <td>
+                          34.5 %
+                        </td>
+                        <td>
+                          $28K
+                        </td>
+                        <td>
+                          <span class="title"><img src="assets/images/icons/saucerswap.svg" alt=""> Saucerswap</span>
+                        </td>
+                        <td>
+                          <div class="table-buttons">
+                            <a href="#" class="primary-btn">Add Liquidity</a>
+                            <a href="#" class="outline-btn">Swap</a>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- mobile boxes -->
+                <div class="table-mobile-boxes">
+                  <div class="table-mobile-box-item">
+                    <div class="label">
+                      <img src="assets/images/icons/flx.svg" alt="">
+                      <h4>FLX - HBARX</h4>
+                    </div>
+                    <div class="d-flex justify-content-between my-2">
+                      <div class="mobile-left">
+                        <span>APR</span> <span>34.5 %</span>
+                      </div>
+                      <div class="mobile-right">
+                        <span>TVL</span> <span>$28K</span>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between my-2">
+
+                      <span>Provider</span> <span><img src="assets/images/icons/saucerswap.svg" alt="">
+                        Saucerswap</span>
+
+                    </div>
+                    <div class="mobile-buttons">
+                      <button class="table-primary-btn">Add Liquidity</button>
+                      <button class="table-bordered-btn">Swap</button>
+                    </div>
+                  </div>
+                  <div class="table-mobile-box-item">
+                    <div class="label">
+                      <img src="assets/images/icons/flx.svg" alt="">
+                      <h4>FLX - HBARX</h4>
+                    </div>
+                    <div class="d-flex justify-content-between my-2">
+                      <div class="mobile-left">
+                        <span>APR</span> <span>34.5 %</span>
+                      </div>
+                      <div class="mobile-right">
+                        <span>TVL</span> <span>$28K</span>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between my-2">
+
+                      <span>Provider</span> <span><img src="assets/images/icons/saucerswap.svg" alt="">
+                        Saucerswap</span>
+
+                    </div>
+                    <div class="mobile-buttons">
+                      <button class="table-primary-btn">Add Liquidity</button>
+                      <button class="table-bordered-btn">Swap</button>
+                    </div>
+                  </div>
+                  <div class="table-mobile-box-item">
+                    <div class="label">
+                      <img src="assets/images/icons/flx.svg" alt="">
+                      <h4>FLX - HBARX</h4>
+                    </div>
+                    <div class="d-flex justify-content-between my-2">
+                      <div class="mobile-left">
+                        <span>APR</span> <span>34.5 %</span>
+                      </div>
+                      <div class="mobile-right">
+                        <span>TVL</span> <span>$28K</span>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between my-2">
+
+                      <span>Provider</span> <span><img src="assets/images/icons/saucerswap.svg" alt="">
+                        Saucerswap</span>
+
+                    </div>
+                    <div class="mobile-buttons">
+                      <button class="table-primary-btn">Add Liquidity</button>
+                      <button class="table-bordered-btn">Swap</button>
+                    </div>
+                  </div>
+                  <div class="table-mobile-box-item">
+                    <div class="label">
+                      <img src="assets/images/icons/flx.svg" alt="">
+                      <h4>FLX - HBARX</h4>
+                    </div>
+                    <div class="d-flex justify-content-between my-2">
+                      <div class="mobile-left">
+                        <span>APR</span> <span>34.5 %</span>
+                      </div>
+                      <div class="mobile-right">
+                        <span>TVL</span> <span>$28K</span>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between my-2">
+
+                      <span>Provider</span> <span><img src="assets/images/icons/saucerswap.svg" alt="">
+                        Saucerswap</span>
+
+                    </div>
+                    <div class="mobile-buttons">
+                      <button class="table-primary-btn">Add Liquidity</button>
+                      <button class="table-bordered-btn">Swap</button>
+                    </div>
+                  </div>
+                  <!-- mobile boxes end -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"
+  integrity="sha512-eP8DK17a+MOcKHXC5Yrqzd8WI5WKh6F1TIk5QZ/8Lbv+8ssblcz7oGC8ZmQ/ZSAPa7ZmsCU4e/hcovqR8jfJqA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="assets/js/main.js"></script>
+</body>
+
+</html>
