@@ -272,6 +272,10 @@
   .table-mobile-boxes {
     grid-template-columns: 1fr;
   }
+
+  .defi-filters ul li a {
+    font-size: 10px;
+  }
 }
 @media screen and (max-width: 585px) {
 }
